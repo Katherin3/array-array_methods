@@ -8,6 +8,10 @@
 const students = ["Sandro", "Mariam", "Dato"];
 
 // შენი კოდი აქ...
+students.push("Luka");
+students.unshift("Nia");
+
+console.log(students);
 
 // მოსალოდნელი შედეგი: ["Nia", "Sandro", "Mariam", "Dato", "Luka"]
 ```
@@ -22,6 +26,11 @@ const students = ["Sandro", "Mariam", "Dato"];
 const colors = ["Black", "Red", "Green", "Blue", "White"];
 
 // შენი კოდი აქ...
+
+colors.pop("white");
+colors.shift("black");
+
+console.log(colors);
 
 // მოსალოდნელი შედეგი: ["Red", "Green", "Blue"]
 ```
@@ -38,6 +47,9 @@ const newName = "admin";
 
 // შენი კოდი აქ...
 
+console.log(usernames.includes("admin"));
+
+
 // მოსალოდნელი შედეგი: true
 // ან შეგიძლია if პირობით დაბეჭდო: "სახელი დაკავებულია"
 ```
@@ -53,6 +65,10 @@ const runners = ["Nika", "Tornike", "Salome", "Beka", "Lela"];
 
 // შენი კოდი აქ...
 
+const newRunners = runners.slice(0, 3);
+conole.log(runners);
+console.log(newRunners);
+
 // მოსალოდნელი შედეგი: ["Nika", "Tornike", "Salome"]
 ```
 
@@ -66,6 +82,8 @@ const runners = ["Nika", "Tornike", "Salome", "Beka", "Lela"];
 const sentence = ["I", "love", "Python", "very", "much"];
 
 // შენი კოდი აქ...
+const newSentence = sentence.splice(2, 1, "JavaScript");
+console.log(sentence);
 
 // მოსალოდნელი შედეგი: ["I", "love", "JavaScript", "very", "much"]
 ```
@@ -80,6 +98,11 @@ const sentence = ["I", "love", "Python", "very", "much"];
 const gelPrices = [27, 54, 13.5, 108];
 
 // შენი კოდი აქ...
+const usdPrices = gelPrices.map((price) => {
+    return price / 2.7;
+})
+
+console.log(usdPrices);
 
 // მოსალოდნელი შედეგი: [10, 20, 5, 40]
 ```
@@ -94,6 +117,9 @@ const gelPrices = [27, 54, 13.5, 108];
 const grades = [45, 78, 92, 33, 51, 88, 49];
 
 // შენი კოდი აქ...
+const passedExam = grades.filter((score) => score >= 51);
+
+console.log(passedExam);
 
 // მოსალოდნელი შედეგი: [78, 92, 51, 88]
 ```
@@ -108,6 +134,11 @@ const grades = [45, 78, 92, 33, 51, 88, 49];
 const distances = [5, 3, 8, 2, 10, 4, 6];
 
 // შენი კოდი აქ...
+const distanceSum = distances.reduce((acc, elem) => {
+    return acc + elem;
+}, 0);
+
+console.log(distanceSum);
 
 // მოსალოდნელი შედეგი: 38
 ```
@@ -122,6 +153,7 @@ const distances = [5, 3, 8, 2, 10, 4, 6];
 const transactions = [150, 200, -50, 400];
 
 // შენი კოდი აქ...
+console.log(transactions.find((amount) => amount < 0));
 
 // მოსალოდნელი შედეგი: -50
 ```
@@ -141,6 +173,11 @@ const products = [
 ];
 
 // შენი კოდი აქ...
+const activeProductNames = products
+.filter((product) => product.inStock)
+.map((item) => item.name);
+
+console.log(activeProductNames);
 
 // მოსალოდნელი შედეგი: ["Laptop", "Mouse", "Keyboard"]
 ```
@@ -156,6 +193,10 @@ const examScores = [45, 78, 92, 33, 51, 88, 49];
 
 // შენი კოდი აქ...
 
+console.log(examScores
+    .filter((score) => score >= 51)
+    .reduce((acc, elem) => acc + elem));
+
 // მოსალოდნელი შედეგი: 309
 ```
 
@@ -169,6 +210,8 @@ const examScores = [45, 78, 92, 33, 51, 88, 49];
 const prices = [40, 100, 75, 30, 200];
 
 // შენი კოდი აქ...
+console.log(prices.map((price) => price - price * 0.2)
+      .filter((item) => item >= 50));
 
 // მოსალოდნელი შედეგი: [80, 60, 160]
 ```
@@ -188,6 +231,11 @@ const storeProducts = [
 ];
 
 // შენი კოდი აქ...
+const expensiveProductNames = storeProducts
+    .filter((product) => product.price > 100)
+    .map((item) => item.name);
+
+console.log(expensiveProductNames);
 
 // მოსალოდნელი შედეგი: ["Headphones", "Monitor"]
 ```
@@ -202,6 +250,9 @@ const storeProducts = [
 const names = ["Luka", "Nia", "Sandro", "Dato", "Giorgi"];
 
 // შენი კოდი აქ...
+const filteredNames = names.filter((name) => name.includes('a'));
+
+console.log(filteredNames);
 
 // მოსალოდნელი შედეგი: ["Luka", "Sandro", "Dato"]
 ```
@@ -220,6 +271,8 @@ const cart = [
 ];
 
 // შენი კოდი აქ...
+console.log(cart.map((item) => item.price * item.quantity)
+    .reduce((acc, elem) => acc + elem));
 
 // მოსალოდნელი შედეგი: 20
 ```
@@ -239,6 +292,8 @@ const users = [
 ];
 
 // შენი კოდი აქ...
+console.log(users.filter((user) => user.isActive)
+    .find((item) => item.age > 18));
 
 // მოსალოდნელი შედეგი: { name: "Dato", age: 19, isActive: true }
 ```
